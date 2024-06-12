@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head th:fragment="head">
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="task/styles/newTask.css">
+        <title>Task Manager</title>
+    </head>
+
+    <body>
+        <form action="addNewTask"
+            name="container"
+            id="container"
+            class="container"
+            method="post">
+            <h1 class="h1">TASKS</h1>
+            <textarea name="title"
+                id="title"
+                class="tarefa"
+                placeholder="Title"
+                maxlength="50"
+                autofocus></textarea>
+            <p>
+                <input type="submit"
+                    id="sub"
+                    value="Submit"
+                    class="btnSubmit">
+                <input type="reset"
+                    value="Clear"
+                    class="btnClear">
+            </p>
+            <div th:each="task:${tasks}"
+                class="taskP">
+                <label class="taskPest">
+                    <input type="checkbox">
+                    <span th:text="${task.title}"></span>
+                </label>
+                <input type="button"
+                    value="Remove"
+                    class="btnRemoveTasks">
+            </div>
+            <!-- <div id="tasks"
+                class="tasks">
+                <div th:each="task:${tasks}"
+                    class="taskP"
+                    th:id="${task.id}">
+                    <label th:class="'taskAdd ' + ${task.isClose}"
+                        th:id="${task.id}">
+                        <input type="checkbox"
+                            name="chIsClose"
+                            class="chIsClose"
+                            th:checked="${task.isClose}">
+                        <span class="eachTask"
+                            th:text="${task.title}"></span>
+                    </label>
+                    <input type="button"
+                    value="Remove"
+                    class="btnRemoveTasks">
+                </div>
+            </div> -->
+            <div class="pagination">
+                <input type="button"
+                    class="page previous"
+                    id="previous"
+                    name="previous"
+                    value="<">
+                <input type="button"
+                    class="page actu"
+                    id="actu"
+                    name="actu"
+                    th:value="${page}">
+                <input type="button"
+                    class="page next"
+                    id="next"
+                    name="next"
+                    value=">">
+            </div>
+        </form>
+        <div id="script">
+            <script src="task/script/newTask.js"
+                defer></script>
+        </div>
+    </body>
+
+</html>

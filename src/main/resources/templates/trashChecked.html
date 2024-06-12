@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="/task/styles/home.css">
+        <link rel="stylesheet"
+            href="/task/styles/dropDown.css">
+        <title>Task Manager</title>
+    </head>
+
+    <body>
+        <form name="container"
+            id="container"
+            class="container">
+            <div th:replace="~{taskFragments/dropDown::dropDown}"></div>
+            <h1 class="h1">TASKS</h1>
+            <textarea name="title"
+                id="title"
+                class="tarefa"
+                placeholder="Task name"
+                maxlength="100"
+                autofocus></textarea>
+            <p>
+            <p>
+                <input type="button"
+                    id="sub"
+                    value="Submit"
+                    class="btnSubmit">
+            </p>
+            <p>
+            <div id="tasks"
+                th:insert="~{taskFragments/body::tasks}"
+                class="taskList">
+            </div>
+            <div class="pagination">
+                <input type="button"
+                    class="page previous"
+                    id="previous"
+                    name="previous"
+                    value="<">
+                <input type="button"
+                    class="page actu"
+                    id="actu"
+                    name="page"
+                    th:value="${page}">
+                <input type="button"
+                    class="page next"
+                    id="next"
+                    name="next"
+                    value=">">
+            </div>
+            <!-- <input type="button"
+                value="🗑️"
+                class="btnTrashTasks"> -->
+        </form>
+        <script src="task/script/request.js"></script>
+        <script src="task/script/home.js"></script>
+    </body>
+
+</html>

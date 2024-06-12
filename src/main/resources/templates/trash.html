@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="/task/styles/trash.css">
+        <link rel="stylesheet"
+            href="/task/styles/dropDown.css">
+        <title>Task Manager</title>
+    </head>
+
+    <body>
+        <form name="container"
+            id="container"
+            class="container">
+            <div th:replace="~{taskFragments/dropDown::dropDown}"></div>
+            <h1 class="h1"
+                th:text="${h1}"></h1>
+            <p>
+            <div id="trashs"
+                th:insert="~{taskFragments/body::trashs}"
+                class="taskList">
+            </div>
+            <div class="pagination">
+                <input type="button"
+                    class="page previous"
+                    id="previous"
+                    name="previous"
+                    value="<">
+                <input type="button"
+                    class="page actu"
+                    id="actu"
+                    name="page"
+                    th:value="${page}">
+                <input type="button"
+                    class="page next"
+                    id="next"
+                    name="next"
+                    value=">">
+            </div>
+        </form>
+        <script src="/task/script/requestTrash.js"></script>
+        <script src="/task/script/trash.js"></script>
+        <script src="/task/script/dropDown.js"></script>
+    </body>
+
+</html>

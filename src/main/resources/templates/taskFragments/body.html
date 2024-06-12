@@ -1,0 +1,51 @@
+<div th:fragment="tasks"
+    class="taskList">
+    <div th:each="task:${tasks}"
+        class="taskP"
+        th:id="${task.id}">
+        <label th:class="'taskPest '+${task.isClose}+' tooltip '">
+            <input class="chIsClose"
+                type="checkbox"
+                th:checked="${task.isClose}">
+            <span class="eachTask"
+                th:text="${task.title}">
+            </span>
+            <!-- <span class="tooltiptext"
+                th:text="${task.title}"></span> -->
+        </label>
+        <input type="button"
+            value="📝"
+            class="btnEditTasks">
+        <input type="button"
+            value="🚫"
+            class="btnRemoveTasks">
+    </div>
+    <span type="hidden"
+        hidden
+        name="helpValues"
+        th:page="${page}"></span>
+</div>
+<div th:fragment="trashs"
+    class="taskList">
+    <div th:each="task:${tasks}"
+        class="taskP"
+        th:id="${task.id}">
+        <div th:class="'taskPest '+ ${task.isClose} + ' tooltip '">
+            <span class="eachTask"
+                th:text="${task.title}">
+            </span>
+            <span class="tooltiptext"
+                th:text="${task.title}"></span>
+        </div>
+        <input type="button"
+            value="✅"
+            class="btnRestoreTasks">
+        <input type="button"
+            value="🚫"
+            class="btnRemoveTasks   ">
+    </div>
+    <span type="hidden"
+        hidden
+        name="helpValues"
+        th:page="${page}"></span>
+</div>

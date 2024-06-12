@@ -1,0 +1,204 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.taskPest.true {
+    text-decoration: line-through;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+/* Header */
+.h1 {
+    font-size: 30px;
+    text-align: center;
+    color: #333333;
+    margin-top: 0;
+}
+
+/* Textarea */
+.tarefa {
+    width: 100%;
+    min-height: 80px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    resize: none;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+/* Buttons */
+p {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.btnSubmit {
+    background-color: #007BFF;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: default;
+    transition: background-color 0.3s;
+    flex: 1 1 48%;
+    box-sizing: border-box;
+}
+
+.btnSubmit:hover,
+.btnClear:hover {
+    background-color: #0056b3;
+}
+
+/* Tasks */
+.taskList {
+    display: flex;
+    flex-direction: column;
+}
+
+.taskP {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.taskPest {
+    display: flex;
+    align-items: center;
+    height: auto;
+    flex: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 20px;
+}
+
+.eachTask {
+    padding: 0px 5px;
+}
+
+
+/* Remove Task Button */
+.btnRemoveTasks,
+.btnEditTasks {
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: default;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+}
+
+.btnRemoveTasks:hover {
+    background-color: #cc0000;
+}
+
+.btnEditTasks:hover {
+    background-color: blue;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.page {
+    background-color: #007BFF;
+    border: none;
+    color: #ffffff;
+    padding: 5px 10px;
+    margin-inline: 5px;
+    border-radius: 5px;
+    cursor: default;
+    transition: background-color 0.3s;
+}
+
+.page:hover {
+    background-color: #0056b3;
+}
+
+.page.actu {
+    background-color: #0056b3;
+}
+
+/* @media (max-width: 600px) {
+    .h1 {
+        font-size: 20px;
+    }
+
+    .tarefa {
+        font-size: 14px;
+    }
+
+    .btnSubmit,
+    .btnClear {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .taskP {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px;
+    }
+
+    .taskPest {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .page {
+        padding: 5px;
+        font-size: 14px;
+    }
+} */
+
+.tooltip {
+    position: relative;
+    /* display: inline-block; */
+    height: 40px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: auto;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 0%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head th:fragment="head">
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="task/styles/newTask.css">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <form action="addNewTask"
+            name="container"
+            id="container"
+            class="container"
+            method="post">
+            <h1 class="h1">TASKS</h1>
+            <textarea name="title"
+                id="title"
+                class="tarefa"
+                placeholder="Title"
+                maxlength="50"
+                autofocus></textarea>
+            <p>
+                <input type="submit"
+                    id="sub"
+                    value="Submit">
+                <input type="reset"
+                    value="Clear">
+            </p>
+            <div id="tasks">
+                <tr th:each="task:${tasks}">
+                    <p class="taskP"
+                        th:id="${task.id}">
+                        <label th:class="'taskAdd ' + ${task.isClose}">
+                            <input type="checkbox"
+                                name="chIsClose"
+                                class="chIsClose"
+                                th:checked="${task.isClose}">
+                            <span class="eachTask"
+                                th:text="${task.title}">
+                            </span>
+                        </label>
+                        <br>
+                        <input type="button"
+                            value="Remove"
+                            class="btnRemoveTasks">
+                    </p>
+                </tr>
+            </div>
+            <input type="button"
+                class="page previous"
+                id="previous"
+                name="previous"
+                value="<">
+            <input type="button"
+                class="page actu"
+                id="actu"
+                name="actu"
+                th:value="${page}">
+            <input type="button"
+                class="page next"
+                id="next"
+                name="next"
+                value=">">
+        </form>
+    </body>
+
+</html>

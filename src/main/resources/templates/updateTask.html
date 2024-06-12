@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+            content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+            href="/task/styles/updateTask.css">
+        <link rel="stylesheet"
+            href="/task/styles/iconTextArea.css">
+        <title>Document</title>
+    </head>
+    </head>
+
+    <body>
+        <form th:action="'/updateTask/'+${task.id}"
+            name="container"
+            id="container"
+            class="container"
+            method="post">
+            <h1 class="h1"
+                th:text="${h1}">
+            </h1>
+            <div class="divTitle">
+                <textarea type="text"
+                    name="title"
+                    id="title"
+                    class="tarefa"
+                    placeholder="Task name"
+                    maxlength="100"
+                    th:text="${task.title}"
+                    autofocus>
+                </textarea>
+                <img src="/favicon.ico">
+            </div>
+            <input type="hidden"
+                name="isClose"
+                th:value="${isClose}">
+            <p>
+            <div id="eventData"></div>
+            <p>
+                <input type="submit"
+                    id="sub"
+                    value="Submit"
+                    class="btnSubmit">
+        </form>
+    </body>
+    <script src="/task/script/updateTask.js"></script>
+
+</html>

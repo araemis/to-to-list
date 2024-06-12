@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+
+    <body>
+        <script>
+            const getData = () => {
+                fetch('addNewTask').then(function (response) {
+                    return response.text();
+                }).then(function (html) {
+                    document.getElementById("myPlaceHolder").innerHTML = html;
+                }).catch(function (err) {
+                    console.warn('Something went wrong.', err);
+                });
+            }
+
+        </script>
+        <p><input type="button"
+                onclick="getData()"
+                value="Get Data" /></p>
+        <div id="myPlaceHolder"></div>
+    </body>
+
+</html>
